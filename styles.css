@@ -40,6 +40,11 @@
 }
 
 /* --- Global Reset & Scrollbars --- */
+html {
+  height: 100%;
+  overflow: hidden;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -52,6 +57,7 @@ body {
   font-family: var(--font-display);
   overflow: hidden;
   height: 100vh;
+  height: 100dvh;
   display: flex;
   flex-direction: column;
 }
@@ -76,6 +82,7 @@ body {
   display: flex;
   flex-direction: column;
   height: 100vh;
+  height: 100dvh;
 }
 
 /* --- Top Navigation Bar --- */
@@ -1465,6 +1472,12 @@ table tr.highlight-row td {
   gap: var(--space-md);
 }
 
+#inspect-default {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
 .info-section {
   display: flex;
   flex-direction: column;
@@ -1739,7 +1752,6 @@ body.dragging {
     top: 70px;
     bottom: 0;
     width: 250px;
-    height: calc(100vh - 70px);
     z-index: 99;
     transform: translateX(-100%);
     transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
@@ -1755,7 +1767,6 @@ body.dragging {
     top: 70px;
     bottom: 0;
     width: 250px; /* Match the left sidebar width on mobile */
-    height: calc(100vh - 70px);
     z-index: 99;
     transform: translateX(100%);
     transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
@@ -1781,6 +1792,48 @@ body.dragging {
   .services-grid {
     grid-template-columns: 1fr;
     gap: var(--space-sm);
+  }
+  
+  /* Prevent horizontal zoom out on mobile by making the canvas responsive */
+  .wireframe-workspace-canvas {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-height: unset !important;
+  }
+  
+  .grid-overlay {
+    width: 100% !important;
+    left: 0 !important;
+    transform: none !important;
+    padding: 0 var(--space-sm) !important;
+    gap: var(--space-xs) !important;
+  }
+  
+  .vectors-overlay {
+    width: 100% !important;
+    left: 0 !important;
+    transform: none !important;
+  }
+  
+  /* Inner dashboard responsiveness */
+  .dash-layout {
+    flex-direction: column;
+    height: auto;
+    overflow-y: auto;
+  }
+  
+  .dash-sidebar {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid var(--border-color);
+    flex-direction: row;
+    overflow-x: auto;
+    padding: var(--space-xs);
+  }
+  
+  .dash-main-body {
+    height: auto;
+    overflow-y: visible;
   }
 }
 
