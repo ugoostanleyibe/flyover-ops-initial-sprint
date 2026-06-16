@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>Flyover Ops — UI/UX & Spacing Architecture Cockpit</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="dark-theme">
+  <div class="cockpit-container">
+    <!-- Top Navigation Bar -->
+    <header class="top-bar">
+      <!-- Mobile sidebar toggle -->
+      <button class="topbar-toggle-btn mobile-only" id="mobile-sidebar-toggle" title="Toggle Sidebar">☰</button>
+      
+      <div class="logo-area">
+        <span class="logo-icon">🚀</span>
+        <div class="logo-text">
+          <h1>FLYOVER OPS</h1>
+          <span class="sub-text">MVP Design & Architecture Cockpit</span>
+        </div>
+      </div>
+      <div class="sprint-status">
+        <div class="status-indicator active"></div>
+        <span>SPRINT 1: DAYS 1 & 2 DELIVERABLES</span>
+      </div>
+      <div class="user-profile">
+        <div class="avatar">SI</div>
+        <div class="user-info">
+          <span class="user-name">Stanley Ibe</span>
+          <span class="user-role">Full-Stack Engineer</span>
+        </div>
+      </div>
+      
+      <!-- Mobile inspector toggle -->
+      <button class="topbar-toggle-btn mobile-only" id="mobile-inspector-toggle" title="Toggle Inspector">ℹ️</button>
+    </header>
+
+    <div class="main-layout">
+      <!-- Sidebar Navigation -->
+      <aside class="sidebar" id="left-sidebar">
+        <nav class="nav-menu">
+          <div class="menu-label">Workspace Views</div>
+          <button class="nav-btn active" data-tab="hub-tab">
+            <span class="btn-icon">📋</span> Project Hub & Matrix
+          </button>
+          <button class="nav-btn" data-tab="journey-tab">
+            <span class="btn-icon">🗺️</span> User Journey Mapping
+          </button>
+          <button class="nav-btn" data-tab="wireframe-tab">
+            <span class="btn-icon">📐</span> Interactive Wireframes
+          </button>
+        </nav>
+
+        <!-- Dynamic Page Selector (Only visible for Wireframe Tab) -->
+        <div class="page-selector-container hidden" id="page-selector-box">
+          <div class="menu-label">7 Key Pages Selector</div>
+          <div class="page-list">
+            <button class="page-btn active" data-page="homepage">1. Homepage</button>
+            <button class="page-btn" data-page="login">2. Login Page</button>
+            <button class="page-btn" data-page="register">3. Registration Page</button>
+            <button class="page-btn" data-page="worker-dashboard">4. Worker Dashboard</button>
+            <button class="page-btn" data-page="diaspora-dashboard">5. Diaspora Dashboard</button>
+            <button class="page-btn" data-page="company-dashboard">6. Company Dashboard</button>
+            <button class="page-btn" data-page="admin-dashboard">7. Admin Dashboard</button>
+          </div>
+        </div>
+
+        <div class="sidebar-footer">
+          <span class="version">v1.0.0 (Alpha Build)</span>
+          <span class="date">June 2026</span>
+        </div>
+      </aside>
+      
+      <!-- Left Resizer Bar -->
+      <div class="resizer-bar" id="left-resizer"></div>
+
+      <!-- Central Working Canvas -->
+      <main class="canvas-area">
+        <!-- Floating Controls Panel -->
+        <div class="controls-bar hidden" id="canvas-controls">
+          <div class="control-group">
+            <span class="control-label">View Mode:</span>
+            <div class="toggle-buttons">
+              <button class="toggle-btn active" id="mode-mockup">Visual Mockup</button>
+              <button class="toggle-btn" id="mode-wireframe">Low-Fi Wireframe</button>
+            </div>
+          </div>
+          <div class="divider"></div>
+          <div class="control-group">
+            <span class="control-label">Architectural Overlays:</span>
+            <label class="switch-container">
+              <input type="checkbox" id="toggle-grid">
+              <span class="slider"></span>
+              <span class="switch-label">12-Col Grid</span>
+            </label>
+            <label class="switch-container">
+              <input type="checkbox" id="toggle-spacing">
+              <span class="slider"></span>
+              <span class="switch-label">Spacing & Margins</span>
+            </label>
+            <label class="switch-container">
+              <input type="checkbox" id="toggle-vectors">
+              <span class="slider"></span>
+              <span class="switch-label">Flow Vectors</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="canvas-viewport">
+          <!-- TAB 1: PROJECT HUB & MATRIX -->
+          <div class="tab-content" id="hub-tab">
+            <div class="hub-container">
+              <div class="welcome-card glassmorphism">
+                <h2>Welcome back, Stanley!</h2>
+                <p>This is your custom pair-programming design cockpit. As the <strong>Full-Stack Engineer</strong>, your primary responsibilities for Day 1 and Day 2 are to align layout mapping, structure user journeys, generate low-fidelity wireframes, and map page spacing architectures across the 7 core pages of the Flyover Ops MVP.</p>
+                <div class="badges">
+                  <span class="badge role">Full-Stack</span>
+                  <span class="badge sprint">Sprint 1</span>
+                  <span class="badge deadline">Daily Updates &lt; 8:00 PM</span>
+                </div>
+              </div>
+
+              <div class="grid-two-cols">
+                <div class="hub-card glassmorphism">
+                  <h3>Day 1 Deliverables (Completed & Visualized)</h3>
+                  <ul class="deliverable-list">
+                    <li class="done">
+                      <span class="status-icon">✓</span>
+                      <div>
+                        <strong>UI/UX Layout Mapping</strong>
+                        <p>Mapped 4 distinct platform user journeys (Worker, Diaspora Partner, Company Client, Admin) indicating operational touchpoints and dashboard routing.</p>
+                      </div>
+                    </li>
+                    <li class="done">
+                      <span class="status-icon">✓</span>
+                      <div>
+                        <strong>High-Level Structural Sketches</strong>
+                        <p>Sketched basic layout block arrangements and identified front-end flow vectors across the core pages.</p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="hub-card glassmorphism">
+                  <h3>Day 2 Deliverables (Completed & Visualized)</h3>
+                  <ul class="deliverable-list">
+                    <li class="done">
+                      <span class="status-icon">✓</span>
+                      <div>
+                        <strong>Wireframe Framework</strong>
+                        <p>Generated clean low-fidelity wireframe structures for the 7 key application pages, emphasizing navigation hierarchies and information hierarchy.</p>
+                      </div>
+                    </li>
+                    <li class="done">
+                      <span class="status-icon">✓</span>
+                      <div>
+                        <strong>Functional Spacing Mapping</strong>
+                        <p>Mapped core interface spacing architectures (8px-grid system, padding, margin, flex alignments) across all 7 pages.</p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- TAB 2: USER JOURNEY MAPPING -->
+          <div class="tab-content hidden" id="journey-tab">
+            <div class="journey-workspace">
+              <div class="journey-header">
+                <h2>Interactive Journey Maps</h2>
+                <p>Select a user role below to track their operational flow vectors through the Flyover Ops ecosystem.</p>
+                <div class="journey-selector">
+                  <button class="journey-role-btn active" data-role="worker">African Remote Worker</button>
+                  <button class="journey-role-btn" data-role="diaspora">Diaspora Partner</button>
+                  <button class="journey-role-btn" data-role="company">Company Client</button>
+                  <button class="journey-role-btn" data-role="admin">Platform Administrator</button>
+                </div>
+              </div>
+
+              <!-- Canvas for Journeys -->
+              <div class="journey-canvas glassmorphism" id="journey-flow-container">
+                <!-- Injected dynamically via JS or coded as SVG flows -->
+              </div>
+            </div>
+          </div>
+
+          <!-- TAB 3: INTERACTIVE WIREFRAMES -->
+          <div class="tab-content hidden" id="wireframe-tab">
+            <div class="wireframe-viewport-wrapper">
+              <!-- Grid overlay (absolute positioned) -->
+              <div class="grid-overlay hidden" id="grid-overlay-layer">
+                <div class="grid-col"></div>
+                <div class="grid-col"></div>
+                <div class="grid-col"></div>
+                <div class="grid-col"></div>
+                <div class="grid-col"></div>
+                <div class="grid-col"></div>
+                <div class="grid-col"></div>
+                <div class="grid-col"></div>
+                <div class="grid-col"></div>
+                <div class="grid-col"></div>
+                <div class="grid-col"></div>
+                <div class="grid-col"></div>
+              </div>
+
+              <!-- SVG Flow Vectors Overlay Layer -->
+              <svg class="vectors-overlay hidden" id="vectors-overlay-layer" width="100%" height="100%">
+                <!-- Dynamic SVG elements injected by JS to draw arrows representing flow vectors -->
+              </svg>
+
+              <!-- Dynamic Wireframe Content -->
+              <div class="wireframe-workspace-canvas" id="wireframe-workspace-canvas">
+                <!-- Page contents will be loaded/toggled here -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+      
+      <!-- Right Resizer Bar -->
+      <div class="resizer-bar" id="right-resizer"></div>
+
+      <!-- Right Inspector Panel -->
+      <aside class="inspector-panel" id="right-inspector">
+        <div class="panel-header">
+          <h3>Architectural Inspector</h3>
+          <span class="inspected-item" id="inspector-title">Project Overview</span>
+        </div>
+
+        <div class="panel-content" id="inspector-content">
+          <!-- Default Hub Info -->
+          <div id="inspect-default">
+            <div class="info-section">
+              <h4>Active Workspace</h4>
+              <p class="filepath">D:/Projects/FlyoverOps/flyover-ops</p>
+            </div>
+            <div class="info-section">
+              <h4>Design Standard</h4>
+              <ul class="spec-list">
+                <li><strong>Spacing:</strong> 8px structural increments (8/16/24/32/48/64)</li>
+                <li><strong>Grid:</strong> 12-Column Desktop, 1140px max-width, 24px gutters</li>
+                <li><strong>Typography:</strong> Outfit (headings), Space Grotesk (technical UI)</li>
+                <li><strong>Visual Style:</strong> Sleek Dark Mode, high-contrast borders, neon accessibility cues</li>
+              </ul>
+            </div>
+            <div class="info-section">
+              <h4>System Modules (11 Entities)</h4>
+              <p>Users, Roles, Profiles, Projects, Tasks, Task Submissions, Notifications, Documents, Earnings, Assessments, Training Modules.</p>
+            </div>
+          </div>
+
+          <!-- Injected via JS when views change -->
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+
+</html>
