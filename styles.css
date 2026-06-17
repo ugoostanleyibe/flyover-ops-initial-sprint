@@ -55,15 +55,13 @@ html {
 
 body {
   background-color: var(--bg-primary);
-  font-family: var(--font-display);
   color: var(--text-primary);
-  flex-direction: column;
-  position: relative;
+  font-family: var(--font-display);
   overflow: hidden;
-  height: 100dvh;
   height: 100vh;
+  height: 100dvh;
   display: flex;
-  width: 100vw;
+  flex-direction: column;
 }
 
 ::-webkit-scrollbar-thumb:hover {
@@ -86,11 +84,10 @@ body {
 
 /* --- Layout Structure --- */
 .cockpit-container {
-  flex-direction: column;
-  overflow: hidden;
   display: flex;
-  height: 100%;
-  width: 100%;
+  flex-direction: column;
+  height: 100vh;
+  height: 100dvh;
 }
 
 /* --- Top Navigation Bar --- */
@@ -104,7 +101,6 @@ body {
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--border-color);
   z-index: 100;
-  flex-shrink: 0;
 }
 
 .logo-area {
@@ -212,31 +208,29 @@ body {
 
 /* --- Main Layout --- */
 .main-layout {
-  height: calc(100dvh - 70px);
-  height: calc(100vh - 70px);
-  overflow: hidden;
   display: flex;
-  min-height: 0;
-  min-width: 0;
-  width: 100%;
   flex: 1;
+  overflow: hidden;
+  min-width: 0;
+  min-height: 0;
+  height: calc(100vh - 70px);
+  height: calc(100dvh - 70px);
 }
 
 /* --- Sidebar --- */
 .sidebar {
-  border-right: 1px solid var(--border-color);
-  padding: var(--space-md) var(--space-sm);
+  width: 180px;
+  height: 100%;
   background: var(--bg-secondary);
-  justify-content: space-between;
+  border-right: 1px solid var(--border-color);
+  display: flex;
   flex-direction: column;
-  align-self: stretch;
+  justify-content: space-between;
+  padding: var(--space-md) var(--space-sm);
+  z-index: 90;
+  min-height: 0;
   overflow-y: auto;
   flex-shrink: 0;
-  display: flex;
-  min-height: 0;
-  height: 100%;
-  width: 180px;
-  z-index: 90;
 }
 
 .menu-label {
@@ -374,7 +368,6 @@ body {
   padding: 12px var(--space-md);
   background: var(--bg-secondary);
   border-bottom: 1px solid var(--border-color);
-  flex-shrink: 0;
   z-index: 80;
 }
 
@@ -729,10 +722,10 @@ table tr.highlight-row td {
 
 /* User Flow Node Styles */
 .flow-diagram {
+  display: flex;
   align-items: center;
   gap: var(--space-lg);
   position: relative;
-  display: flex;
 }
 
 .flow-node {
@@ -827,19 +820,19 @@ table tr.highlight-row td {
 
 /* Grid Overlay (12 columns) */
 .grid-overlay {
-  grid-template-columns: repeat(12, 1fr);
-  transform: translateX(-50%);
-  pointer-events: none;
   position: absolute;
-  padding: 0 32px;
-  width: 1000px;
-  display: grid;
-  opacity: 0.15;
-  height: 100%;
-  z-index: 95;
-  left: 50%;
-  gap: 24px;
   top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1000px;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 24px;
+  padding: 0 32px;
+  pointer-events: none;
+  z-index: 95;
+  opacity: 0.15;
 }
 
 .grid-col {
@@ -853,14 +846,14 @@ table tr.highlight-row td {
 
 /* Vectors Overlay Layer */
 .vectors-overlay {
-  transform: translateX(-50%);
-  pointer-events: none;
   position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
   width: 1000px;
   height: 100%;
+  pointer-events: none;
   z-index: 96;
-  left: 50%;
-  top: 0;
 }
 
 /* --- General Wireframe Elements --- */
@@ -1323,7 +1316,6 @@ table tr.highlight-row td {
   border-radius: 4px;
   padding: var(--space-sm);
 }
-
 .wireframe-mode .dash-card {
   background: #ffffff;
   border-color: #a0aec0;
@@ -1338,9 +1330,7 @@ table tr.highlight-row td {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  min-height: 0;
 }
-
 .wireframe-mode .card-title {
   border-color: #cbd5e0;
   background-color: #cbd5e0;
@@ -1460,15 +1450,15 @@ table tr.highlight-row td {
 
 /* Right Inspector Details Panel */
 .inspector-panel {
-  border-left: 1px solid var(--border-color);
-  background: var(--bg-secondary);
-  flex-direction: column;
-  align-self: stretch;
-  flex-shrink: 0;
-  display: flex;
-  height: 100%;
   width: 220px;
+  height: 100%;
+  background: var(--bg-secondary);
+  border-left: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
   z-index: 90;
+  min-height: 0;
+  flex-shrink: 0;
 }
 
 .panel-header {
