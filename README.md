@@ -41,11 +41,11 @@ The cockpit is built using a lightweight, premium tech stack of **Semantic HTML5
 ### Option A: Local Browser Launch
 Simply double-click the index.html file or open it in any modern browser
 
-### Option B: GitHub Pages (Recommended)
-Simply visit https://ugoostanleyibe.github.io/flyover-ops-initial-sprint to take a look
+### Option B: Hosted Site On Vercel (Recommended)
+Simply visit https://flyover-ops-initial-sprint.vercel.app to take a look
 
 ### Option C: Local Web Server
-If you want, you can also run a local dev server using Node/Npx (such as HTTP-Server or Live Server)
+If you want, you can also run a local dev server using Node (such as Live Server)
 
 ---
 
