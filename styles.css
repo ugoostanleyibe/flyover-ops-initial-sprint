@@ -43,38 +43,43 @@
 html {
   height: 100%;
   overflow: hidden;
+  /* Prevent GitHub Pages / remote browsers zooming out due to content width */
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 * {
   box-sizing: border-box;
-  margin: 0;
   padding: 0;
+  margin: 0;
 }
 
 body {
-  background-color: var(--bg-primary);
   color: var(--text-primary);
+  background-color: var(--bg-primary);
   font-family: var(--font-display);
-  overflow: hidden;
-  height: 100vh;
-  height: 100dvh;
-  display: flex;
   flex-direction: column;
+  overflow: hidden;
+  display: flex;
+  height: 100vh;
 }
 
-::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-cyan);
 }
-::-webkit-scrollbar-track {
-  background: var(--bg-primary);
-}
+
 ::-webkit-scrollbar-thumb {
   background: var(--border-color);
   border-radius: 3px;
 }
-::-webkit-scrollbar-thumb:hover {
-  background: var(--accent-cyan);
+
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+::-webkit-scrollbar {
+  height: 6px;
+  width: 6px;
 }
 
 /* --- Layout Structure --- */
@@ -82,7 +87,6 @@ body {
   display: flex;
   flex-direction: column;
   height: 100vh;
-  height: 100dvh;
 }
 
 /* --- Top Navigation Bar --- */
@@ -209,7 +213,6 @@ body {
   min-width: 0;
   min-height: 0;
   height: calc(100vh - 70px);
-  height: calc(100dvh - 70px);
 }
 
 /* --- Sidebar --- */
@@ -1688,7 +1691,9 @@ table tr.highlight-row td {
   height: 100%;
   background: var(--border-color);
   cursor: col-resize;
-  transition: background 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    background 0.2s ease,
+    box-shadow 0.2s ease;
   z-index: 98;
   position: relative;
   flex-shrink: 0;
@@ -1706,12 +1711,14 @@ table tr.highlight-row td {
   transition: background 0.2s ease;
 }
 
-.resizer-bar:hover, .resizer-bar.active {
+.resizer-bar:hover,
+.resizer-bar.active {
   background: var(--accent-cyan);
   box-shadow: 0 0 10px rgba(0, 229, 255, 0.5);
 }
 
-.resizer-bar:hover::after, .resizer-bar.active::after {
+.resizer-bar:hover::after,
+.resizer-bar.active::after {
   background: var(--bg-primary);
 }
 
@@ -1754,12 +1761,12 @@ body.dragging {
   .mobile-only#mobile-inspector-toggle {
     display: flex;
   }
-  
+
   #left-resizer,
   #right-resizer {
     display: none;
   }
-  
+
   .sidebar {
     position: absolute;
     left: 0;
@@ -1769,12 +1776,12 @@ body.dragging {
     z-index: 99;
     transform: translateX(-100%);
     transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-    box-shadow: 10px 0 30px rgba(0,0,0,0.5);
+    box-shadow: 10px 0 30px rgba(0, 0, 0, 0.5);
     background: var(--bg-secondary);
     border-right: 1px solid var(--border-color);
     border-left: none;
   }
-  
+
   .inspector-panel {
     position: absolute;
     right: 0;
@@ -1784,37 +1791,37 @@ body.dragging {
     z-index: 99;
     transform: translateX(100%);
     transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-    box-shadow: -10px 0 30px rgba(0,0,0,0.5);
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
     background: var(--bg-secondary);
     border-left: 1px solid var(--border-color);
     border-right: none;
   }
-  
+
   .sidebar.open {
     transform: translateX(0);
   }
-  
+
   .inspector-panel.open {
     transform: translateX(0);
   }
-  
+
   .grid-two-cols {
     grid-template-columns: 1fr;
     gap: var(--space-sm);
   }
-  
+
   .services-grid {
     grid-template-columns: 1fr;
     gap: var(--space-sm);
   }
-  
+
   /* Prevent horizontal zoom out on mobile by making the canvas responsive */
   .wireframe-workspace-canvas {
     width: 100% !important;
     max-width: 100% !important;
     min-height: unset !important;
   }
-  
+
   .grid-overlay {
     width: 100% !important;
     left: 0 !important;
@@ -1822,20 +1829,20 @@ body.dragging {
     padding: 0 var(--space-sm) !important;
     gap: var(--space-xs) !important;
   }
-  
+
   .vectors-overlay {
     width: 100% !important;
     left: 0 !important;
     transform: none !important;
   }
-  
+
   /* Inner dashboard responsiveness */
   .dash-layout {
     flex-direction: column;
     height: auto;
     overflow-y: auto;
   }
-  
+
   .dash-sidebar {
     width: 100%;
     border-right: none;
@@ -1844,7 +1851,7 @@ body.dragging {
     overflow-x: auto;
     padding: var(--space-xs);
   }
-  
+
   .dash-main-body {
     height: auto;
     overflow-y: visible;
@@ -1855,15 +1862,15 @@ body.dragging {
   .sprint-status {
     display: none;
   }
-  
+
   .logo-text h1 {
     font-size: 16px;
   }
-  
+
   .top-bar {
     padding: 0 var(--space-sm);
   }
-  
+
   .dash-hero-stats {
     grid-template-columns: 1fr 1fr;
     gap: var(--space-xs);
