@@ -37,15 +37,6 @@
   --space-md: 24px;
   --space-sm: 16px;
   --space-xs: 8px;
-
-  /* Dimensions */
-  --app-height: 100vh;
-}
-
-@supports (height: 100dvh) {
-  :root {
-    --app-height: 100dvh;
-  }
 }
 
 /* --- Global Reset & Scrollbars --- */
@@ -56,12 +47,6 @@ html {
   height: 100%;
 }
 
-html,
-body {
-  min-height: 100%;
-  width: 100%;
-}
-
 * {
   box-sizing: border-box;
   padding: 0;
@@ -69,13 +54,16 @@ body {
 }
 
 body {
-  color: var(--text-primary);
   background-color: var(--bg-primary);
   font-family: var(--font-display);
-  min-height: var(--app-height);
+  color: var(--text-primary);
   flex-direction: column;
+  position: relative;
   overflow: hidden;
+  height: 100dvh;
+  height: 100vh;
   display: flex;
+  width: 100vw;
 }
 
 ::-webkit-scrollbar-thumb:hover {
@@ -98,10 +86,11 @@ body {
 
 /* --- Layout Structure --- */
 .cockpit-container {
-  min-height: var(--app-height);
   flex-direction: column;
+  overflow: hidden;
   display: flex;
-  flex: 1;
+  height: 100%;
+  width: 100%;
 }
 
 /* --- Top Navigation Bar --- */
@@ -115,6 +104,7 @@ body {
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--border-color);
   z-index: 100;
+  flex-shrink: 0;
 }
 
 .logo-area {
@@ -222,10 +212,13 @@ body {
 
 /* --- Main Layout --- */
 .main-layout {
-  display: flex;
+  height: calc(100dvh - 70px);
+  height: calc(100vh - 70px);
   overflow: hidden;
+  display: flex;
   min-height: 0;
   min-width: 0;
+  width: 100%;
   flex: 1;
 }
 
@@ -239,8 +232,9 @@ body {
   align-self: stretch;
   overflow-y: auto;
   flex-shrink: 0;
-  min-height: 0;
   display: flex;
+  min-height: 0;
+  height: 100%;
   width: 180px;
   z-index: 90;
 }
@@ -380,6 +374,7 @@ body {
   padding: 12px var(--space-md);
   background: var(--bg-secondary);
   border-bottom: 1px solid var(--border-color);
+  flex-shrink: 0;
   z-index: 80;
 }
 
@@ -734,10 +729,10 @@ table tr.highlight-row td {
 
 /* User Flow Node Styles */
 .flow-diagram {
-  display: flex;
   align-items: center;
   gap: var(--space-lg);
   position: relative;
+  display: flex;
 }
 
 .flow-node {
@@ -836,11 +831,11 @@ table tr.highlight-row td {
   transform: translateX(-50%);
   pointer-events: none;
   position: absolute;
-  min-height: 100%;
   padding: 0 32px;
   width: 1000px;
   display: grid;
   opacity: 0.15;
+  height: 100%;
   z-index: 95;
   left: 50%;
   gap: 24px;
@@ -861,8 +856,8 @@ table tr.highlight-row td {
   transform: translateX(-50%);
   pointer-events: none;
   position: absolute;
-  min-height: 100%;
   width: 1000px;
+  height: 100%;
   z-index: 96;
   left: 50%;
   top: 0;
@@ -1328,6 +1323,7 @@ table tr.highlight-row td {
   border-radius: 4px;
   padding: var(--space-sm);
 }
+
 .wireframe-mode .dash-card {
   background: #ffffff;
   border-color: #a0aec0;
@@ -1342,7 +1338,9 @@ table tr.highlight-row td {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  min-height: 0;
 }
+
 .wireframe-mode .card-title {
   border-color: #cbd5e0;
   background-color: #cbd5e0;
@@ -1467,8 +1465,8 @@ table tr.highlight-row td {
   flex-direction: column;
   align-self: stretch;
   flex-shrink: 0;
-  min-height: 0;
   display: flex;
+  height: 100%;
   width: 220px;
   z-index: 90;
 }
